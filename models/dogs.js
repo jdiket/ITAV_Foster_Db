@@ -4,7 +4,9 @@ const dogSchema = new mongoose.Schema({
     name: { type: String, require: true },
     age: { type: Number, require: true },
     sex: { type: String },
-    fixed: { type: Boolean, require: true }
+    fixed: { type: Boolean, require: true },
+    male: String,
+    female: String
 });
 
 const Dog = mongoose.model('Dog', dogSchema);

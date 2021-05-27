@@ -14,6 +14,7 @@ const port = 3000;
 // EXPRESS MIDDLEWARE
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 // EXTERNAL MIDDLEWARE
 app.use(methodOverride('_method'));

@@ -4,11 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/dogs.css">
     <title>It Takes a Village</title>
 </head>
 <body>
     <h1>Index</h1>
 
     <a href="/dogs/new">Register a New Dog</a>
+
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Sex</td>
+            <td>Spayed/Neutered</td>
+        </tr>
+        <% for (let i = 0; i < dogs.length; i ++) { %>
+        <tr>
+            <td><a href="/dogs/<%= dogs[i].id %>"><%= dogs[i].name %></a></td>
+            <td><%= dogs[i].age %></td>
+            <td><%= dogs[i].sex %></td>
+            <td><%= dogs[i].fixed %></td>
+        </tr>
+        <% } %>
+    </table>
 </body>
 </html>

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 
 // IMPORT MODELS
-const Dog = require('../models/dogs.js');
+const Dogs = require('../models/dogs.js');
 
 // ROUTES
 // INDEX
@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/dogs', (req, res) => {
-    Dog.find({}, (err, allDogs) => {
+    Dogs.find({}, (err, allDogs) => {
         if (err) { res.send(err) }
         else {res.render('index.ejs', { dogs: allDogs })}
     })
@@ -36,14 +36,18 @@ router.post('/dogs/', (req, res) => {
 
     console.log(req.body);
 
-    Dog.create(req.body, (err, createdDog) => { 
+    Dogs.create(req.body, (err, createdDog) => { 
         if (err) { res.send(err) }
         else { res.redirect('/dogs') }
     });
 });
 
 // SHOW
-
+router.get('/dogs/:id', (req, res) => {
+    Dogs.findById(req.params.id, (err, foundDog) => {
+        res.render('show.ejs', { dog: foundDog })
+    });
+});
 
 
 // EDIT

@@ -12,8 +12,8 @@
     <form action='/dogs/<%= dog.id %>?_method=PUT' method="POST">
         Name: <input type="text" name="name" value="<%= dog.name %>"/><br />
         Age: <input type="number" name="age" value="<%= dog.age %>" /><br />
-        Sex: M<input type="checkbox" name="male" />  F<input type="checkbox" name="female" /><br />
-        Spayed/Neutered: <input type="checkbox" name="fixed" /><br />
+        Sex: M<input type="checkbox" name="male" <% if (dog.male === 'on') {%> checked <%}%>/>  F<input type="checkbox" name="female" <% if (dog.female === 'on') {%> checked <%}%>/><br />
+        Spayed/Neutered: <input type="checkbox" name="fixed" <% if (dog.fixed === true) {%> checked <%}%>/><br />
         <input type="submit" name="" value="Submit Changes to Registry" />
     </form>
 

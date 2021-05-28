@@ -10,7 +10,7 @@ require('dotenv').config();
 // CONFIG
 const app = express();
 const port = process.env.PORT || 3000;
-const MONGODBURI = process.env.MONGODOURI || 'mongodb://localhost:27017/ITAV'
+const MONGODBURI = process.env.MONGODBURI || 'mongodb://localhost:27017/ITAV'
 
 // EXPRESS MIDDLEWARE
 app.use(express.json());

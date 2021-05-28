@@ -50,6 +50,12 @@ router.get('/dogs/:id', (req, res) => {
 });
 
 // DELETE
+router.delete('/dogs/:id', (req, res) => {
+    Dogs.findByIdAndRemove(req.params.id, (err, deletedDog) => {
+        console.log(deletedDog);
+        res.redirect('/dogs');
+    });
+});
 
 // EDIT
 router.get('/dogs/:id/edit', (req, res) => {

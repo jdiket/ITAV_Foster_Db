@@ -49,13 +49,25 @@ router.get('/dogs/:id', (req, res) => {
     });
 });
 
-
-// EDIT
-
-
 // DELETE
 
+// EDIT
+router.get('/dogs/:id/edit', (req, res) => {
+    Dogs.findById(req.params.id, (err, foundDog) => {
+        res.render('edit.ejs', { dog: foundDog })
+    });
+});
 
+router.put('/dogs/:id', (req, res) => {
+    if (req.body.male === 'on') { req.body.sex = 'M' }
+    else if (req.body.female === 'on') { req.body.sex = 'F' }
 
+    if (req.body.fixed === 'on') { req.body.fixed = true }
+    else { req.body.fixed = false }
+
+    Dogs.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedDog) => {
+        res.redirect('/dogs')
+    });
+});
 
 module.exports = router;

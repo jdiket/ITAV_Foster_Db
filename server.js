@@ -10,6 +10,7 @@ require('dotenv').config();
 // CONFIG
 const app = express();
 const port = provess.env.PORT || 3000;
+const MONGODBURI = process.env.MONGODOURI || 'mongodb://localhost:27017/ITAV'
 
 // EXPRESS MIDDLEWARE
 app.use(express.json());
@@ -19,7 +20,7 @@ app.use(express.static('public'));
 // EXTERNAL MIDDLEWARE
 app.use(methodOverride('_method'));
 
-mongoose.connect('mongodb://localhost:27017/ITAV', {
+mongoose.connect(`${MONGODBURI}`, {
     useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false
 });
 mongoose.connection.once('open', () => { console.log('candygram for mongo') });

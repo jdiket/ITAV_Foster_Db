@@ -9,7 +9,7 @@ require('dotenv').config();
 
 // CONFIG
 const app = express();
-const port = 3000;
+const port = provess.env.PORT || 3000;
 
 // EXPRESS MIDDLEWARE
 app.use(express.json());

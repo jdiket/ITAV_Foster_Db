@@ -7,6 +7,8 @@
     <title>It Takes a Village</title>
 </head>
 <body>
+    <%- include ('./partials/header.ejs') %>
+
     <h1>Edit <%= dog.name %></h1>
 
     <form action='/dogs/<%= dog.id %>?_method=PUT' method="POST">
@@ -14,6 +16,7 @@
         Age: <input type="number" name="age" value="<%= dog.age %>" /><br />
         Sex: M<input type="checkbox" name="male" <% if (dog.male === 'on') {%> checked <%}%>/>  F<input type="checkbox" name="female" <% if (dog.female === 'on') {%> checked <%}%>/><br />
         Spayed/Neutered: <input type="checkbox" name="fixed" <% if (dog.fixed === true) {%> checked <%}%>/><br />
+        Description: <textarea name="description"><%= dog.description %></textarea>
         <input type="submit" name="" value="Submit Changes to Registry" />
     </form>
 

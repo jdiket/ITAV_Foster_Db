@@ -7,6 +7,8 @@
     <title>It Takes a Village</title>
 </head>
 <body>
+    <%- include ('./partials/header.ejs') %>
+
     <h1>New Dog</h1>
 
     <form action='/dogs' method="POST">
@@ -14,6 +16,7 @@
         Age: <input type="number" name="age" /><br />
         Sex: M<input type="checkbox" name="male" />  F<input type="checkbox" name="female" /><br />
         Spayed/Neutered: <input type="checkbox" name="fixed" /><br />
+        Description: <textarea name="description"></textarea>
         <input type="submit" name="" value="Add Dog to Registry" />
     </form>
 

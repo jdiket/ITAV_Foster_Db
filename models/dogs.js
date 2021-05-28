@@ -5,6 +5,7 @@ const dogSchema = new mongoose.Schema({
     age: { type: Number, require: true },
     sex: { type: String },
     fixed: { type: Boolean, require: true },
+    description: String,
     male: String,
     female: String
 });

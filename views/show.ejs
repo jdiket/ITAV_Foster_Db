@@ -7,6 +7,8 @@
     <title>It Takes a Village</title>
 </head>
 <body>
+    <%- include ('./partials/header.ejs') %>
+
     <h1><%= dog.name %></h1>
 
     <a href="/dogs/<%= dog.id %>/edit"><button>Edit Information</button></a>

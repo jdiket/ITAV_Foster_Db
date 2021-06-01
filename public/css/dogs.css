@@ -5,3 +5,7 @@ table, td, tr {
 table {
     text-align: center;
 }
+
+.contact {
+    display: inline;
+}

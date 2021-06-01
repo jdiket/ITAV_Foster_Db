@@ -21,7 +21,7 @@ router.get('/dogs', (req, res) => {
 
 // NEW
 router.get('/dogs/new', (req, res) => {
-    res.render('new.ejs')
+    res.render('dog_new.ejs')
 });
 
 // CREATE
@@ -45,7 +45,7 @@ router.post('/dogs/', (req, res) => {
 // SHOW
 router.get('/dogs/:id', (req, res) => {
     Dogs.findById(req.params.id, (err, foundDog) => {
-        res.render('show.ejs', { dog: foundDog })
+        res.render('dog_show.ejs', { dog: foundDog })
     });
 });
 
@@ -60,7 +60,7 @@ router.delete('/dogs/:id', (req, res) => {
 // EDIT
 router.get('/dogs/:id/edit', (req, res) => {
     Dogs.findById(req.params.id, (err, foundDog) => {
-        res.render('edit.ejs', { dog: foundDog })
+        res.render('dog_edit.ejs', { dog: foundDog })
     });
 });
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/dogs.css">
+    <title>It Takes a Village</title>
+</head>
+<body>
+    <%- include ('./partials/header.ejs') %>
+
+    <h1>Foster Family Registry</h1>
+
+    <a href="/foster/new">Register a New Foster</a>
+
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Phone Number</td>
+            <td>Address</td>
+            <td>Foster Dogs</td>
+            <td>Delete</td>
+        </tr>
+        <% for (let i = 0; i < dogs.length; i ++) { %>
+        <tr>
+            <td><a href="/foster/<%= fosters[i].id %>"><%= fosters[i].name %></a></td>
+            <td><%= fosters[i].phone %></td>
+            <td><%= fosters[i].address %></td>
+            <td><%= fosters[i].dogs %></td>
+            <td>
+                <form action="/foster/<%= fosters[i].id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete" />
+                </form>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+</html>

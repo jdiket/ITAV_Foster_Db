@@ -26,8 +26,10 @@ mongoose.connect(`${MONGODBURI}`, {
 mongoose.connection.once('open', () => { console.log('candygram for mongo') });
 
 // CONTROLLERS
-const serviceController = require('./controllers/service_controllers.js')
-app.use(serviceController);
+const dogController = require('./controllers/dog_controllers.js');
+const fosterController = require('./controllers/foster_controllers.js');
+app.use(dogController);
+app.use(fosterController);
 
 // LISTENER
 app.listen(port, () => { console.log('5 by 5 on port: ', port) });

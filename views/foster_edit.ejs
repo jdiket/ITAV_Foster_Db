@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It Takes a Village</title>
+</head>
+<body>
+    <%- include ('./partials/header.ejs') %>
+
+    <h1>Edit <%= foster.name %></h1>
+
+    <form action='/foster/<%= foster.id %>?_method=PUT' method="POST">
+        Name: <input type="text" name="name" value="<%= foster.name %>"/><br />
+        Age: <input type="text" name="phone" value="<%= foster.phone %>" /><br />
+        Address: <textarea name="address"><%= foster.address %></textarea>
+        <input type="submit" name="" value="Submit Changes to Registry" />
+    </form>
+
+    <a href="/foster">Back to Index</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It Takes a Village</title>
+</head>
+<body>
+    <%- include ('./partials/header.ejs') %>
+
+    <h1><%= foster.name %></h1>
+
+    <p><%= foster.phone %></p>
+
+    <p><%= foster.address %></p>
+
+    <a href="/foster/<%= foster.id %>/edit"><button>Edit Information</button></a>
+
+    <a href="/foster"><button>Back to Index</button></a>
+</body>
+</html>

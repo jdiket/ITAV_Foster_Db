@@ -25,7 +25,7 @@ router.get('/foster/new', (req, res) => {
 });
 
 // CREATE
-router.post('/foster/', (req, res) => {
+router.post('/foster', (req, res) => {
 
     console.log(req.body);
 
@@ -53,7 +53,7 @@ router.delete('/foster/:id', (req, res) => {
 // EDIT
 router.get('/foster/:id/edit', (req, res) => {
     Fosters.findById(req.params.id, (err, foundFoster) => {
-        res.render('dog_edit.ejs', { foster: foundFoster })
+        res.render('foster_edit.ejs', { foster: foundFoster })
     });
 });
 

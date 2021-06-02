@@ -54,7 +54,9 @@ router.delete('/foster/:id', (req, res) => {
 // EDIT
 router.get('/foster/:id/edit', (req, res) => {
     Fosters.findById(req.params.id, (err, foundFoster) => {
-        res.render('foster_edit.ejs', { foster: foundFoster })
+        Dogs.find({}, (err, allDogs) => {
+            res.render('foster_edit.ejs', { foster: foundFoster, dogs: allDogs })
+        })
     });
 });
 

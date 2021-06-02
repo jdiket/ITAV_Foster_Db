@@ -5,7 +5,6 @@ const methodOverride = require('method-override');
 
 // IMPORT MODELS
 const Dogs = require('../models/dogs.js');
-const Fosters = require('../models/fosters.js');
 
 // ROUTES
 // INDEX

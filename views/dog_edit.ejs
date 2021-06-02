@@ -17,6 +17,8 @@
         Sex: M<input type="checkbox" name="male" <% if (dog.male === 'on') {%> checked <%}%>/>  F<input type="checkbox" name="female" <% if (dog.female === 'on') {%> checked <%}%>/><br />
         Spayed/Neutered: <input type="checkbox" name="fixed" <% if (dog.fixed === true) {%> checked <%}%>/><br />
         Description: <textarea name="description"><%= dog.description %></textarea>
+        Medical Conditions: <textarea name="conditions"><%= dog.conditions %></textarea>
+        Foster: 
         <input type="submit" name="" value="Submit Changes to Registry" />
     </form>
 

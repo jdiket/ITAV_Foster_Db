@@ -4,7 +4,7 @@ const fosterSchema = new mongoose.Schema({
     name: { type: String, required: true },
     phone: { type: String, minLength: 10, required: true },
     address: String,
-    dogs: Array
+    dogs: String
 });
 
 const Foster = mongoose.model('Foster', fosterSchema);

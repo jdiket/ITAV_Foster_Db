@@ -61,9 +61,7 @@ router.delete('/dogs/:id', (req, res) => {
 // EDIT
 router.get('/dogs/:id/edit', (req, res) => {
     Dogs.findById(req.params.id, (err, foundDog) => {
-        Fosters.find({}, (err, allFosters) => {
-            res.render('dog_edit.ejs', { dog: foundDog, fosters: allFosters })
-        })
+        res.render('dog_edit.ejs', { dog: foundDog })
     });
 });
 

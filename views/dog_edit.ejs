@@ -16,14 +16,8 @@
         Age: <input type="number" name="age" value="<%= dog.age %>" /><br />
         Sex: M<input type="checkbox" name="male" <% if (dog.male === 'on') {%> checked <%}%>/>  F<input type="checkbox" name="female" <% if (dog.female === 'on') {%> checked <%}%>/><br />
         Spayed/Neutered: <input type="checkbox" name="fixed" <% if (dog.fixed === true) {%> checked <%}%>/><br />
-        Description: <textarea name="description"><%= dog.description %></textarea>
-        Medical Conditions: <textarea name="conditions"><%= dog.conditions %></textarea>
-        <label for="foster">Foster:</label>
-        <select id="fosters" name="foster">
-            <% for (;et i = 0; i < fosters.length; i ++) { %>
-            
-            <% } %>
-        </select>
+        Description: <textarea name="description"><%= dog.description %></textarea><br />
+        Medical Conditions: <textarea name="conditions"><%= dog.conditions %></textarea><br />
         <input type="submit" name="" value="Submit Changes to Registry" />
     </form>
 

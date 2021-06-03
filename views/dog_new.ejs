@@ -10,16 +10,19 @@
 <body>
     <%- include ('./partials/header.ejs') %>
 
-    <h1>New Dog</h1>
+    <div class="container">
+        <h1>New Dog</h1>
 
-    <form action='/dogs' method="POST">
-        Name: <input type="text" name="name" /><br />
-        Age: <input type="number" name="age" /><br />
-        Sex: M<input type="checkbox" name="male" />  F<input type="checkbox" name="female" /><br />
-        Spayed/Neutered: <input type="checkbox" name="fixed" /><br />
-        Description: <textarea name="description"></textarea><br />
-        <input type="submit" name="" value="Add Dog to Registry" />
-    </form>
+        <form action='/dogs' method="POST">
+            Name: <input type="text" name="name" /><br />
+            Age: <input type="number" name="age" /><br />
+            Sex: M<input type="checkbox" name="male" />  F<input type="checkbox" name="female" /><br />
+            Spayed/Neutered: <input type="checkbox" name="fixed" /><br />
+            Description: <textarea name="description"></textarea><br />
+            <input type="submit" name="" value="Add Dog to Registry" />
+        </form>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>

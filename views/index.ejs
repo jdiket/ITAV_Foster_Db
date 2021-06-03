@@ -11,31 +11,35 @@
 <body>
     <%- include ('./partials/header.ejs') %>
 
-    <h1>Foster Dog Registry</h1>
+    <div class="container">
+        <h1>Foster Dog Registry</h1>
 
-    <a href="/dogs/new">Register a New Dog</a>
+        <a href="/dogs/new">Register a New Dog</a>
 
-    <table>
-        <tr>
-            <td>Name</td>
-            <td>Age</td>
-            <td>Sex</td>
-            <td>Spayed/Neutered</td>
-            <td>Delete</td>
-        </tr>
-        <% for (let i = 0; i < dogs.length; i ++) { %>
-        <tr>
-            <td><a href="/dogs/<%= dogs[i].id %>"><%= dogs[i].name %></a></td>
-            <td><%= dogs[i].age %></td>
-            <td><%= dogs[i].sex %></td>
-            <td><%= dogs[i].fixed %></td>
-            <td>
-                <form action="/dogs/<%= dogs[i].id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete" />
-                </form>
-            </td>
-        </tr>
-        <% } %>
-    </table>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Age</td>
+                <td>Sex</td>
+                <td>Spayed/Neutered</td>
+                <td>Delete</td>
+            </tr>
+            <% for (let i = 0; i < dogs.length; i ++) { %>
+            <tr>
+                <td><a href="/dogs/<%= dogs[i].id %>"><%= dogs[i].name %></a></td>
+                <td><%= dogs[i].age %></td>
+                <td><%= dogs[i].sex %></td>
+                <td><%= dogs[i].fixed %></td>
+                <td>
+                    <form action="/dogs/<%= dogs[i].id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="Delete" />
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>

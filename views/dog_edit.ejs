@@ -14,12 +14,42 @@
         <h1>Edit <%= dog.name %></h1>
 
         <form action='/dogs/<%= dog.id %>?_method=PUT' method="POST">
-            Name: <input type="text" name="name" value="<%= dog.name %>"/><br />
-            Age: <input type="number" name="age" value="<%= dog.age %>" /><br />
-            Sex: M<input type="checkbox" name="male" <% if (dog.male === 'on') {%> checked <%}%>/>  F<input type="checkbox" name="female" <% if (dog.female === 'on') {%> checked <%}%>/><br />
-            Spayed/Neutered: <input type="checkbox" name="fixed" <% if (dog.fixed === true) {%> checked <%}%>/><br />
-            Description: <textarea name="description"><%= dog.description %></textarea><br />
-            Medical Conditions: <textarea name="conditions"><%= dog.conditions %></textarea><br />
+
+            <div class="form-floating mb-3">
+                <input type="text" name="name" class="form-control" id="floatingInput" value="<%= dog.name %>"/>
+                <label for="nameInput" class="form-label">Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="number" name="age" class="form-control" id="floatingInput" value="<%= dog.age %>"/>
+                <label for="ageInput" class="form-label">Age</label>
+            </div>
+            
+            Sex:
+            <div class="form-check form-check-inline">
+                <input type="radio" name="sex" class="form-check-input" id="maleRadio" value="M" <% if (dog.sex === 'M') {%> checked <%}%>/>
+                <label class="form-check-label" for="maleRadio">M</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" name="sex" class="form-check-input" id="femaleRadio" value="F" <% if (dog.sex === 'F') {%> checked <%}%>/>
+                <label class="form-check-label" for="femaleRadio">F</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input type="checkbox" name="fixed" class="form-check-input" id="fixedSwitch" <% if (dog.fixed) {%> checked <%}%>/>
+                <label class="form-check-label" for="fixedSwitch">Spayed/Neutered?</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <textarea name="description" class="form-control" id="floatingTextarea"><%= dog.description %></textarea>
+                <label for="floatingTextarea">Description</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <textarea name="conditions" class="form-control" id="floatingTextarea"><%= dog.conditions %></textarea>
+                <label for="floatingTextarea">Medical Conditions</label>
+            </div>
+
             <input type="submit" name="" value="Submit Changes to Registry" />
         </form>
     </div>

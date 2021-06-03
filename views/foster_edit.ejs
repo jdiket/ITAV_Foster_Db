@@ -14,10 +14,22 @@
         <h1>Edit <%= foster.name %></h1>
 
         <form action='/foster/<%= foster.id %>?_method=PUT' method="POST">
-            Name: <input type="text" name="name" value="<%= foster.name %>"/><br />
-            Age: <input type="text" name="phone" value="<%= foster.phone %>" /><br />
-            Address: <textarea name="address"><%= foster.address %></textarea>
-            Dogs: 
+
+            <div class="form-floating mb-3">
+                <input type="text" name="name" class="form-control" id="floatingInput" value="<%= foster.name %>"/>
+                <label for="nameInput" class="form-label">Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" name="phone" class="form-control" id="floatingInput" value="<%= foster.phone %>"/>
+                <label for="phoneInput" class="form-label">Phone Number</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <textarea name="address" class="form-control" id="floatingTextarea"><%= foster.address %></textarea>
+                <label for="addressInput" class="form-label">Address</label>
+            </div>
+
             <input type="submit" name="" value="Submit Changes to Registry" />
         </form>
     </div>

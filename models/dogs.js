@@ -8,8 +8,6 @@ const dogSchema = new mongoose.Schema({
     description: String,
     conditions: String,
     foster: String,
-    male: String,
-    female: String
 });
 
 const Dog = mongoose.model('Dog', dogSchema);

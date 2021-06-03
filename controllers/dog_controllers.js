@@ -28,9 +28,6 @@ router.get('/dogs/new', (req, res) => {
 router.post('/dogs/', (req, res) => {
     console.log(req.body);
 
-    if (req.body.male === 'on') { req.body.sex = 'M' }
-    else if (req.body.female === 'on') { req.body.sex = 'F' }
-
     if (req.body.fixed === 'on') { req.body.fixed = true }
     else { req.body.fixed = false }
 
@@ -65,8 +62,6 @@ router.get('/dogs/:id/edit', (req, res) => {
 });
 
 router.put('/dogs/:id', (req, res) => {
-    if (req.body.male === 'on') { req.body.sex = 'M' }
-    else if (req.body.female === 'on') { req.body.sex = 'F' }
 
     if (req.body.fixed === 'on') { req.body.fixed = true }
     else { req.body.fixed = false }

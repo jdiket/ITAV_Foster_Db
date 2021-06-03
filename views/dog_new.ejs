@@ -14,11 +14,38 @@
         <h1>New Dog</h1>
 
         <form action='/dogs' method="POST">
-            Name: <input type="text" name="name" /><br />
-            Age: <input type="number" name="age" /><br />
-            Sex: M<input type="checkbox" name="male" />  F<input type="checkbox" name="female" /><br />
-            Spayed/Neutered: <input type="checkbox" name="fixed" /><br />
-            Description: <textarea name="description"></textarea><br />
+            <div class="form-floating mb-3">
+                <input type="text" name="name" class="form-control" id="floatingInput"/>
+                <label for="nameInput" class="form-label">Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="number" name="age" class="form-control" id="floatingInput"/>
+                <label for="ageInput" class="form-label">Age</label>
+            </div>
+
+            
+            Sex:
+            <div class="form-check form-check-inline">
+                <input type="radio" name="sex" class="form-check-input" id="maleRadio" value="M"/>
+                <label class="form-check-label" for="maleRadio">M</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" name="sex" class="form-check-input" id="femaleRadio" value="F"/>
+                <label class="form-check-label" for="femaleRadio">F</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input type="checkbox" name="fixed" class="form-check-input" id="fixedSwitch"/>
+                <label class="form-check-label" for="fixedSwitch">Spayed/Neutered?</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <textarea name="description" class="form-control" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Description</label>
+            </div>
+
+
             <input type="submit" name="" value="Add Dog to Registry" />
         </form>
     </div>

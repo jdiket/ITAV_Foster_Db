@@ -14,10 +14,24 @@
         <h1>New Foster</h1>
 
         <form action='/foster' method="POST">
-            Name: <input type="text" name="name" /><br />
-            Phone Number: <input type="text" name="phone" /><br />
-            Address: <textarea name="address"></textarea><br />
+
+            <div class="form-floating mb-3">
+                <input type="text" name="name" class="form-control" id="floatingInput"/>
+                <label for="nameInput" class="form-label">Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" name="phone" class="form-control" id="floatingInput"/>
+                <label for="phoneInput" class="form-label">Phone Number</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <textarea name="address" class="form-control" id="floatingTextarea"></textarea>
+                <label for="addressInput" class="form-label">Address</label>
+            </div>
+
             <input type="submit" name="" value="Add Foster to Roster" />
+
         </form>
     </div>
 

@@ -11,36 +11,12 @@
     <%- include ('./partials/header.ejs') %>
 
     <div class="container">
-        <h1>Foster Dog Registry</h1>
+        <h1>Foster and Dog Registry</h1>
 
-        <a href="/dogs/new">Register a New Dog</a>
+        <a href="/dogs/new">Register a New Dog</a><br />
+        <a href="/foster/new">Register a New Foster</a>
 
-        <table class="table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">Name</td>
-                    <th scope="col">Age</td>
-                    <th scope="col">Sex</td>
-                    <th scope="col">Spayed/Neutered</td>
-                    <th scope="col">Delete</td>
-                </tr>
-            </thead>
-            <tbody>
-                <% for (let i = 0; i < dogs.length; i ++) { %>
-                <tr>
-                    <td><a href="/dogs/<%= dogs[i].id %>"><%= dogs[i].name %></a></td>
-                    <td><%= dogs[i].age %></td>
-                    <td><%= dogs[i].sex %></td>
-                    <td><%= dogs[i].fixed %></td>
-                    <td>
-                        <form action="/dogs/<%= dogs[i].id %>?_method=DELETE" method="POST">
-                            <input type="submit" value="Delete" />
-                        </form>
-                    </td>
-                </tr>
-                <% } %>
-            </tbody>
-        </table>
+        
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>

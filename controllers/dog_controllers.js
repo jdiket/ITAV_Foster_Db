@@ -9,13 +9,13 @@ const Dogs = require('../models/dogs.js');
 // ROUTES
 // INDEX
 router.get('/', (req, res) => {
-    res.send('hello')
+    res.render('index.ejs')
 });
 
 router.get('/dogs', (req, res) => {
     Dogs.find({}, (err, allDogs) => {
         if (err) { res.send(err) }
-        else {res.render('index.ejs', { dogs: allDogs })}
+        else {res.render('dog_index.ejs', { dogs: allDogs })}
     })
 })
 

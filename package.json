@@ -13,7 +13,9 @@
   },
   "name": "ga-project2",
   "version": "1.0.0",
-  "engines": { "node": "15.14.0"},
+  "engines": {
+    "node": "15.14.0"
+  },
   "main": "server.js",
   "author": "",
   "license": "ISC",
